@@ -1,32 +1,197 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="patiobarApp">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<title>Patiobar</title>
-		<link rel="stylesheet" href="/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/main.css">
-	</head>
-	<body>
-		<nav class="navbar navbar-inverse" role="navigation" ng-controller="StationController">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="240">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#2d2d30">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#2d2d30">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#2d2d30">
+  <!-- Title & CSS -->
+  <link rel="shortcut icon" href="pandora.ico" type="image/x-icon">
+  <link rel="icon" href="pandora.ico" type="image/x-icon">
+	<title>Music Player</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/main.css">
+  <style>
+  body {
+      background-color: #222;
+      color: #777;
+      height: 100%;
+      margin: 0;
+  }
+  .projects {
+      border: 10px solid transparent;
+      margin-bottom: 20px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .projects:hover {
+      border-color: #f1f1f1;
+  }
+  .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 12px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+      box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #d5d5d5 !important;
+      background-color: #29292c !important;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .dropdown-menu li a:hover {
+      background-color: #555 !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 24px;
+      position: fixed;
+      height: 65px;
+      bottom: 0;
+      width: 100%;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }
+  textarea {
+      resize: none;
+  }
+    div.ex1 {
+    width:250px;
+    margin: auto;
+    border: 0px solid #73AD21;
+  }
+    .fixed_width {
+    height: 200px;
+    width: 200px;
+  }
+    h3 {
+    color: black;
+    text-shadow: 2px 2px 4px #000000;
+  }
+    img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  }
+    .content {
+    height: 100%;
+    min-height: 100%; /*for mozilla*/
+  }
+    html > body .content {
+    height: auto;
+  }
+@media (min-width: 768px)
+{
+    .navbar-header
+    {
+        float: none;
+    }
+
+    .navbar-toggle
+    {
+        display: block;
+    }
+
+    .navbar-collapse.collapse
+    {
+        display: none !important;
+    }
+}
+</style>
+</head>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+		<nav class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation" ng-controller="StationController">
 			<div class="container-fluid">
-				<div class="navbar-header">
+				<div class="navbar-header container-fluid-nav">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stations">
 						<span class="sr-only">Toggle Stations</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<p class="navbar-brand"><a href="https://github.com/kylejohnson/Patiobar">Patiobar</a></p>
+					<p class="navbar-brand">Pandora</p>
 				</div><!-- End navbar-header -->
 	
 				<div class="text-center collapse navbar-collapse" id="stations">
 					<button type="button" ng-repeat="station in stations" class="btn btn-default navbar-btn btn-sm" ng-click="changeStation(station.id);" ng-class="{'btn-success': stationName == station.name}">{{station.name}}</button>
 				</div> 
 			</div> <!-- End container-fluid -->
-		</nav> 
-	
+		</nav>
+	<br><br><br><br>
 		<div class="container" ng-controller="SongController">
 			<div id="player" class="center-block">
 				<div class="text-center">
@@ -38,13 +203,11 @@
 					</div>
 	
 	     		<div id="controls">
-						<button type="button" id="love" class="pull-left btn btn-default" ng-click="sendCommand('+');"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>
 						<button id="pauseplay" type="button" class="btn btn-default" ng-click="sendCommand('p');"> <span class="glyphicon glyphicon-pause"></span> </button>
 						<button type="button" class="btn btn-default" ng-click="sendCommand('n');"> <span class="glyphicon glyphicon-fast-forward"></span> </button> 
 						<button type="button" class="btn btn-default" ng-click="sendCommand('(');"> <span class="glyphicon glyphicon-volume-down"></span> </button>
 						<button type="button" class="btn btn-default" ng-click="sendCommand(')');"> <span class="glyphicon glyphicon-volume-up"></span> </button>
 						<button type="button" title="Tired (shelve for a month)" class="btn btn-default" ng-click="sendCommand('t');"> <span class="glyphicon glyphicon-calendar"></span> </button>
-						<button type="button" class="pull-right btn btn-default" ng-click="sendCommand('-');"> <span class="glyphicon glyphicon-thumbs-down"></span> </button>
 					</div>
 				</div> <!-- End text-center -->
 			</div> <!-- End Player -->
