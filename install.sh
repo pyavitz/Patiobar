@@ -53,6 +53,7 @@ user = user@example.com
 password = password
 #autostart_station = 123456
 audio_quality = high
+buffer_seconds = 0
 event_command = ${event_command}
 fifo = ${fifo}
 tls_fingerprint = ${tls_fingerprint}
