@@ -207,9 +207,10 @@
 						<button type="button" class="btn btn-default" ng-click="sendCommand('n');"> <span class="glyphicon glyphicon-fast-forward"></span> </button> 
 						<button type="button" class="btn btn-default" ng-click="sendCommand('(');"> <span class="glyphicon glyphicon-volume-down"></span> </button>
 						<button type="button" class="btn btn-default" ng-click="sendCommand(')');"> <span class="glyphicon glyphicon-volume-up"></span> </button>
-						<br>						
-						<button type="button" title="Tired (shelve for a month)" class="btn btn-default" ng-click="sendCommand('t');"> <span class="glyphicon glyphicon-calendar"></span></button>
-						<button type="button" class="btn btn-default" ng-click="sendCommand('q');"> <span class="glyphicon glyphicon-off"></span> </button>					
+						<br>
+                        			<button type="button" title="Like Song" class="btn btn-default" ng-click="sendCommand('+');"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>                             $
+                        			<button type="button" title="Tired (shelve for a month)" class="btn btn-default" ng-click="sendCommand('t');"> <span class="glyphicon glyphicon-calendar"></span></button>
+                        			<button type="button" title="Dislike Song" class="btn btn-default" ng-click="sendCommand('-');"> <span class="glyphicon glyphicon-thumbs-down"></span> </button>				
 					</div>
 				</div> <!-- End text-center -->
 			</div> <!-- End Player -->
