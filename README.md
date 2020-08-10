@@ -1,7 +1,7 @@
 Patiobar
 ========
 
-![Frontend Screenshot](https://i.imgur.com/4j3XrPf.jpg)
+![Frontend Screenshot](https://i.imgur.com/1sKScsD.jpg)
 
 A web frontend for pianobar, which is a CLI frontend for Pandora.
 
