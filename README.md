@@ -1,3 +1,7 @@
+#### This has been integrated into the [rpi-img-builder](https://github.com/pyavitz/rpi-img-builder/tree/musicbox). Check under [release](https://github.com/pyavitz/rpi-img-builder/releases/tag/images) for the latest available images.
+
+---
+
 Patiobar
 ========
 
